@@ -42,7 +42,8 @@ public class Main {
 			            	event.getMessage().delete();
 			            }
 			        	if (event.getMessageContent().toLowerCase().startsWith("/possible")) {
-			        		mode++; if(mode >= 3) mode = 0; 
+			        		mode++;
+						if(mode >= 3) mode = 0; 
 			        		event.getChannel().sendMessage("Winning against me is now "+currentMode());
 			            	event.getMessage().delete();
 			        	}
@@ -112,7 +113,8 @@ public class Main {
 	            	if(split.length<2) //ignore if array is too small
 	            		continue;
             		String q = split[0];
-            		String a = ""; int i = 1;
+            		String a = "";
+			int i = 1;
             		while(a.isBlank() && i < split.length) {
             			//if it doesn't start with + or -, it is an answer
             			if(!(split[i].startsWith("+") || split[i].startsWith("-")) && !split[i].isBlank())
